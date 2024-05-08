@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import javax.swing.JList;
 import javax.swing.JPanel;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
 /**
  *
@@ -25,7 +21,6 @@ public class Dashboard extends javax.swing.JFrame {
         
         Tienda p1 = new Tienda();
         ShowPanel(p1);
-         
     }
 
     /**
@@ -207,8 +202,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton Inventario;
     private javax.swing.JPanel bg;
     private JList<String> itemList;
-    String itemNames [];
-    ArrayList<Item> items;
+    private String itemNames [];
+    private ArrayList<Item> items;
     public static javax.swing.JPanel contenido;
     // End of variables declaration//GEN-END:variables
 }
