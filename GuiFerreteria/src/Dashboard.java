@@ -1,5 +1,8 @@
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
+
+import javax.swing.JList;
 import javax.swing.JPanel;
 
 /*
@@ -18,8 +21,9 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+        setUpItems();
         
-        Page1 p1 = new Page1();
+        Tienda p1 = new Tienda();
         ShowPanel(p1);
          
     }
@@ -33,11 +37,12 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        items = new ArrayList<Item>();
+
         bg = new javax.swing.JPanel();
         contenido = new javax.swing.JPanel();
-        PageButton1 = new javax.swing.JButton();
-        PageButton2 = new javax.swing.JButton();
-        PageButton3 = new javax.swing.JButton();
+        Tienda = new javax.swing.JButton();
+        Inventario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,30 +60,22 @@ public class Dashboard extends javax.swing.JFrame {
             .addGap(0, 421, Short.MAX_VALUE)
         );
 
-        PageButton1.setBackground(new java.awt.Color(51, 255, 153));
-        PageButton1.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
-        PageButton1.setText("Tienda");
-        PageButton1.addActionListener(new java.awt.event.ActionListener() {
+        Tienda.setBackground(new java.awt.Color(51, 255, 153));
+        Tienda.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
+        Tienda.setText("Tienda");
+        Tienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PageButton1ActionPerformed(evt);
+                TiendaActionPerformed(evt);
             }
         });
 
-        PageButton2.setBackground(new java.awt.Color(51, 255, 153));
-        PageButton2.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
-        PageButton2.setText("Carrito");
-        PageButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PageButton2ActionPerformed(evt);
-            }
-        });
 
-        PageButton3.setBackground(new java.awt.Color(51, 255, 153));
-        PageButton3.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
-        PageButton3.setText("Inventario");
-        PageButton3.addActionListener(new java.awt.event.ActionListener() {
+        Inventario.setBackground(new java.awt.Color(51, 255, 153));
+        Inventario.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
+        Inventario.setText("Inventario");
+        Inventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PageButton3ActionPerformed(evt);
+                InventarioActionPerformed(evt);
             }
         });
 
@@ -93,11 +90,9 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(14, Short.MAX_VALUE))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(PageButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Tienda, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PageButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(PageButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Inventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(12, 12, 12))))
         );
         bgLayout.setVerticalGroup(
@@ -105,11 +100,10 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PageButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Tienda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(PageButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(PageButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67))
@@ -120,8 +114,8 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PageButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PageButton1ActionPerformed
-        Page1 p1 = new Page1();
+    private void TiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PageButton1ActionPerformed
+        Tienda p1 = new Tienda();
         p1.setSize(708,499);
         p1.setLocation(0,0);
         
@@ -129,21 +123,11 @@ public class Dashboard extends javax.swing.JFrame {
         contenido.add(p1, BorderLayout.CENTER);
         contenido.revalidate();
         contenido.repaint();
-    }//GEN-LAST:event_PageButton1ActionPerformed
+    }//GEN-LAST:event_TiendaActionPerformed
 
-    private void PageButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PageButton2ActionPerformed
-        Page2 p2 = new Page2();
-        p2.setSize(750,421);
-        p2.setLocation(0,0);
-        
-        contenido.removeAll();
-        contenido.add(p2, BorderLayout.CENTER);
-        contenido.revalidate();
-        contenido.repaint();
-    }//GEN-LAST:event_PageButton2ActionPerformed
-
-    private void PageButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PageButton3ActionPerformed
-        Page3 p3 = new Page3();
+    private void InventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PageButton3ActionPerformed
+        setUpItems();
+        Inventario p3 = new Inventario(itemList, items);
         p3.setSize(750,421);
         p3.setLocation(0,0);
         
@@ -151,7 +135,7 @@ public class Dashboard extends javax.swing.JFrame {
         contenido.add(p3, BorderLayout.CENTER);
         contenido.revalidate();
         contenido.repaint();
-    }//GEN-LAST:event_PageButton3ActionPerformed
+    }//GEN-LAST:event_InventarioActionPerformed
     
     private void ShowPanel(JPanel p)
     {
@@ -162,6 +146,24 @@ public class Dashboard extends javax.swing.JFrame {
         contenido.add(p, BorderLayout.CENTER);
         contenido.revalidate();
         contenido.repaint();
+    }
+
+    private void setUpItems() {
+        items.clear();
+        items.add(new Item("martillo", 50000, "Se usa para golpear", 25));
+        items.add(new Item("martillo1", 50000, "Se usa para golpear", 25));
+        items.add(new Item("martillow", 50000, "Se usa para golpear", 25));
+        items.add(new Item("martillo2", 50000, "Se usa para golpear", 25));
+        items.add(new Item("martillo3", 50000, "Se usa para golpear", 25));
+        ArrayList<String> names = new ArrayList<String>();
+        for (Item i: items) {
+            names.add(i.name);
+        }
+        itemNames = new String[names.size()];
+        for (int i = 0; i < names.size(); i++) {
+            itemNames[i] = names.get(i);
+        }
+        itemList = new JList<String>(itemNames);
     }
     
     
@@ -201,10 +203,12 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton PageButton1;
-    private javax.swing.JButton PageButton2;
-    private javax.swing.JButton PageButton3;
+    private javax.swing.JButton Tienda;
+    private javax.swing.JButton Inventario;
     private javax.swing.JPanel bg;
+    private JList<String> itemList;
+    String itemNames [];
+    ArrayList<Item> items;
     public static javax.swing.JPanel contenido;
     // End of variables declaration//GEN-END:variables
 }
