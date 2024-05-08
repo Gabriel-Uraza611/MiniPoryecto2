@@ -101,4 +101,4 @@ public class Inventario extends javax.swing.JPanel {
     private JList<String> InventList;
     private ArrayList<Item> items;
     // End of variables declaration//GEN-END:variables
-}
+
